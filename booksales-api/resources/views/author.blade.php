@@ -10,7 +10,14 @@
     
     <ul>
         @foreach ($authors as $author)
-            <li>{{ $author['name'] }}</li>
+            <li>
+                <strong>{{ $author['name'] }}</strong>
+                <ul>
+                    @foreach ($author['descriptions'] as $description)
+                        <li>{{ $description }}</li>
+                    @endforeach
+                </ul>
+            </li>
         @endforeach
     </ul>
 

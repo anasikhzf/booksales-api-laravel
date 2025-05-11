@@ -10,7 +10,14 @@
     
     <ul>
         @foreach ($genres as $genre)
-            <li>{{ $genre['name'] }}</li>
+            <li>
+                <strong>{{ $genre['name'] }}</strong>
+                <ul>
+                    @foreach ($genre['descriptions'] as $description)
+                        <li>{{ $description }}</li>
+                    @endforeach
+                </ul>
+            </li>
         @endforeach
     </ul>
 
