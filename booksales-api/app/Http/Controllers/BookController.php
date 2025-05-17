@@ -8,8 +8,11 @@ class BookController extends Controller
 {
     public function index()
     {
-        // Ambil semua buku dengan relasi author
         $books = Book::with('author')->get();
-        return view('books', compact('books'));
+
+        return response()->json([
+            'message' => 'Data buku berhasil diambil',
+            'data' => $books
+        ], 200);
     }
 }
