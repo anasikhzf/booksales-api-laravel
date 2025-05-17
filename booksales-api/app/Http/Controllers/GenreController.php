@@ -8,7 +8,7 @@ class GenreController extends Controller
 {
     public function index()
     {
-        $genres = Genre::allGenres();
+        $genres = Genre::all();
 
         return response()->json([
             'message' => 'Data genre berhasil diambil',
