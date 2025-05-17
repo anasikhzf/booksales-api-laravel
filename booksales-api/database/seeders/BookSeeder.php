@@ -14,11 +14,41 @@ class BookSeeder extends Seeder
     public function run(): void
     {
         Book::insert([
-            ['title' => 'Harry Potter and the Sorcerer\'s Stone', 'author_id' => 1, 'created_at' => now(), 'updated_at' => now()],
-            ['title' => 'A Game of Thrones', 'author_id' => 2, 'created_at' => now(), 'updated_at' => now()],
-            ['title' => 'The Lord of the Rings', 'author_id' => 3, 'created_at' => now(), 'updated_at' => now()],
-            ['title' => 'Murder on the Orient Express', 'author_id' => 4, 'created_at' => now(), 'updated_at' => now()],
-            ['title' => 'The Shining', 'author_id' => 5, 'created_at' => now(), 'updated_at' => now()],
+            [
+                'title' => 'Harry Potter and the Sorcerer\'s Stone', 
+                'author_id' => 1, 
+                'genre_id' => 14, 
+                'created_at' => now(), 
+                'updated_at' => now()
+            ],
+            [
+                'title' => 'A Game of Thrones', 
+                'author_id' => 2, 
+                'genre_id' => 14, 
+                'created_at' => now(), 
+                'updated_at' => now()
+            ],
+            [
+                'title' => 'The Lord of the Rings', 
+                'author_id' => 3, 
+                'genre_id' => 14, 
+                'created_at' => now(), 
+                'updated_at' => now()
+            ],
+            [
+                'title' => 'Murder on the Orient Express', 
+                'author_id' => 4, 
+                'genre_id' => 11, 
+                'created_at' => now(), 
+                'updated_at' => now()
+            ],
+            [
+                'title' => 'The Shining', 
+                'author_id' => 5, 
+                'genre_id' => 11, 
+                'created_at' => now(), 
+                'updated_at' => now()
+            ],
         ]);
     }
 }
