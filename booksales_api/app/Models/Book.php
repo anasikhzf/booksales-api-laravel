@@ -6,15 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
-    protected $fillable = ['title', 'author_id', 'genre_id'];
+    protected $fillable = ['title', 'description', 'image_name', 'author_id', 'genre_id'];
 
-    public function author()
-    {
+    public function author() {
         return $this->belongsTo(Author::class);
     }
 
-    public function genre()
-    {
+    public function genre() {
         return $this->belongsTo(Genre::class);
     }
 }
