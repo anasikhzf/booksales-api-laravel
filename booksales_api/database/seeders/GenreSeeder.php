@@ -9,29 +9,12 @@ class GenreSeeder extends Seeder
 {
     public function run()
     {
-        Genre::create([
-            'name' => 'Fiction',
-            'descriptions' => 'Fictional books category',
-        ]);
-
-        Genre::create([
-            'name' => 'Non-Fiction',
-            'descriptions' => 'Based on real facts and information',
-        ]);
-
-        Genre::create([
-            'name' => 'Science',
-            'descriptions' => 'Books related to scientific topics',
-        ]);
-
-        Genre::create([
-            'name' => 'Fantasy',
-            'descriptions' => 'Magical or supernatural themed books',
-        ]);
-
-        Genre::create([
-            'name' => 'Biography',
-            'descriptions' => 'Books about people’s lives',
+        Genre::insert([
+            ['name' => 'Fiction', 'descriptions' => 'Fictional books', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Non-Fiction', 'descriptions' => 'Non-fictional books', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Mystery', 'descriptions' => 'Mystery and thriller', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Romance', 'descriptions' => 'Romantic books', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Science', 'descriptions' => 'Science related books', 'created_at' => now(), 'updated_at' => now()],
         ]);
     }
 }

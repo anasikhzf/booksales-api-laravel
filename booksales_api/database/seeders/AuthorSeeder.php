@@ -9,24 +9,12 @@ class AuthorSeeder extends Seeder
 {
     public function run()
     {
-        Author::create([
-            'name' => 'John Doe',
-            'address' => '123 Street Name',
-        ]);
-
-        Author::create([
-            'name' => 'Jane Smith',
-            'address' => '456 Avenue Lane',
-        ]);
-
-        Author::create([
-            'name' => 'Alice Johnson',
-            'address' => '789 Main Road',
-        ]);
-
-        Author::create([
-            'name' => 'Robert Brown',
-            'address' => '101 Side Street',
+        Author::insert([
+            ['name' => 'Author One', 'name_image' => 'author1.jpg', 'bio' => 'Bio Author One', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Author Two', 'name_image' => 'author2.jpg', 'bio' => 'Bio Author Two', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Author Three', 'name_image' => 'author3.jpg', 'bio' => 'Bio Author Three', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Author Four', 'name_image' => 'author4.jpg', 'bio' => 'Bio Author Four', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Author Five', 'name_image' => 'author5.jpg', 'bio' => 'Bio Author Five', 'created_at' => now(), 'updated_at' => now()],
         ]);
     }
 }

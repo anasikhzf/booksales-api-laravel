@@ -44,7 +44,7 @@ class BookController extends Controller
         $book = Book::create([
             'title' => $request->title,
             'description' => $request->description,
-            'image_name' => $imageName,
+            'cover_image_name' => $imageName,
             'author_id' => $request->author_id,
             'genre_id' => $request->genre_id,
         ]);
@@ -59,7 +59,7 @@ class BookController extends Controller
             return response()->json(['message' => 'Book not found'], 404);
         }
         
-        $imagePath = public_path('images/' . $book->image_name);
+        $imagePath = public_path('images/' . $book->cover_image_name);
         if (file_exists($imagePath)) {
             unlink($imagePath);
         }
@@ -89,14 +89,14 @@ class BookController extends Controller
         }
 
         if ($request->hasFile('image')) {
-            $oldImagePath = public_path('images/' . $book->image_name);
+            $oldImagePath = public_path('images/' . $book->cover_image_name);
             if (file_exists($oldImagePath)) {
                 unlink($oldImagePath);
             }
             $image = $request->file('image');
             $imageName = $image->hashName();
             $image->move(public_path('images'), $imageName);
-            $book->image_name = $imageName;
+            $book->cover_image_name = $imageName;
         }
 
         $book->fill($request->only(['title', 'description', 'author_id', 'genre_id']));

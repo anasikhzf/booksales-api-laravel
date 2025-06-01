@@ -26,7 +26,8 @@ class AuthorController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
-            'address' => 'required|string',
+            'name_image' => 'required|string',
+            'bio' => 'required|string',
         ]);
 
         if ($validator->fails()) {
@@ -35,7 +36,8 @@ class AuthorController extends Controller
 
         $author = Author::create([
             'name' => $request->name,
-            'address' => $request->address,
+            'name_image' => $request->name_image,
+            'bio' => $request->bio,
         ]);
 
         return response()->json(['message' => 'Author created successfully', 'author' => $author],201);
@@ -61,15 +63,16 @@ class AuthorController extends Controller
         }
 
         $validator = Validator::make($request->all(), [
-            'name' => 'sometimes|required|string',
-            'address' => 'sometimes|required|string',
+            'name' => 'required|string',
+            'name_image' => 'required|string',
+            'bio' => 'required|string',
         ]);
 
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        $author->fill($request->only(['name', 'address']));
+        $author->fill($request->only(['name', 'name_image', 'bio']));
         $author->save();
 
         return response()->json(['message' => 'Author updated successfully', 'author' => $author]);

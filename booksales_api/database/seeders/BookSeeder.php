@@ -13,44 +13,12 @@ class BookSeeder extends Seeder
      */
     public function run(): void
     {
-        Book::create([
-            'title' => 'Example Book',
-            'description' => 'Sample description.',
-            'image_name' => 'example.jpg',
-            'author_id' => 1,
-            'genre_id' => 1,
-        ]);
-
-        Book::create([
-            'title' => 'The Time Traveler',
-            'description' => 'A journey through time and space.',
-            'image_name' => 'time_traveler.jpg',
-            'author_id' => 2,
-            'genre_id' => 4,
-        ]);
-
-        Book::create([
-            'title' => 'Life of a Genius',
-            'description' => 'Biography of a legendary figure.',
-            'image_name' => 'genius_life.jpg',
-            'author_id' => 3,
-            'genre_id' => 5,
-        ]);
-
-        Book::create([
-            'title' => 'The Science of Everything',
-            'description' => 'Explaining science in simple terms.',
-            'image_name' => 'science_everything.jpg',
-            'author_id' => 1,
-            'genre_id' => 3,
-        ]);
-
-        Book::create([
-            'title' => 'The Real World',
-            'description' => 'A non-fiction look at society.',
-            'image_name' => 'real_world.jpg',
-            'author_id' => 4,
-            'genre_id' => 2,
+        Book::insert([
+            ['title' => 'Book One', 'description' => 'Description Book One', 'price' => 100000, 'stok' => 10, 'cover_image_name' => 'cover1.jpg', 'genre_id' => 1, 'author_id' => 1, 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'Book Two', 'description' => 'Description Book Two', 'price' => 120000, 'stok' => 8, 'cover_image_name' => 'cover2.jpg', 'genre_id' => 2, 'author_id' => 2, 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'Book Three', 'description' => 'Description Book Three', 'price' => 90000, 'stok' => 15, 'cover_image_name' => 'cover3.jpg', 'genre_id' => 3, 'author_id' => 3, 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'Book Four', 'description' => 'Description Book Four', 'price' => 110000, 'stok' => 7, 'cover_image_name' => 'cover4.jpg', 'genre_id' => 4, 'author_id' => 4, 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'Book Five', 'description' => 'Description Book Five', 'price' => 95000, 'stok' => 20, 'cover_image_name' => 'cover5.jpg', 'genre_id' => 5, 'author_id' => 5, 'created_at' => now(), 'updated_at' => now()],
         ]);
     }
 }

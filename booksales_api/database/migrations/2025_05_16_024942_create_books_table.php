@@ -12,13 +12,12 @@ class CreateBooksTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->string('image_name');
-            $table->unsignedBigInteger('author_id');
-            $table->unsignedBigInteger('genre_id');
+            $table->decimal('price', 10, 2);
+            $table->integer('stok'); // Fixed 'int' to 'integer'
+            $table->string('cover_image_name');
+            $table->foreignId('genre_id')->constrained('genres')->onDelete('cascade'); // Fixed 'contrained' to 'constrained'
+            $table->foreignId('author_id')->constrained('authors')->onDelete('cascade'); // Fixed 'contrained' to 'constrained'
             $table->timestamps();
-
-            $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');
-            $table->foreign('genre_id')->references('id')->on('genres')->onDelete('cascade');
         });
     }
 
